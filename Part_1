@@ -1,0 +1,105 @@
++---------------------------------------------------+
+
+|                   SlotMachine                     |
++---------------------------------------------------+
+
+| - coins : int                                     |
+| - reel : string[3]                                |
+| - totalSpins : int                                |
++---------------------------------------------------+
+
+| + SlotMachine()                                   |
+| + SlotMachine(initialCoins : int)                 |
+| + ~SlotMachine()                                  |
+| + setCoins(c : int) : void                        |
+| + getCoins() : int {query}                        |
+| + spin(bet : int) : bool                          |
+| +  printResults() : void {query}                  |
+| +  resetMachine() : void                          |
++---------------------------------------------------+
+
+
+
++---------------------------------------------------+
+
+|                   NumberGuesser                   |
++---------------------------------------------------+
+
+| - secretNumber : int                              |
+| - maxGuesses : int                                |
+| - guessCount : int                                |
+| - solved : bool                                   |
+| _+ gamesPlayed : int_                             |
++---------------------------------------------------+
+
+| + NumberGuesser(min : int, max : int, maxG : int) |
+| + setRange(min : int, max : int) : void           |
+| + guess(g : int) : string                         |
+| + getGuessCount() : int {query, inline}           |
+| + isSolved() : bool {query}                       |
+| + reset() : void                                  |
++---------------------------------------------------+
+
+
+
++---------------------------------------------------+
+
+|                   WordScramble                    |
++---------------------------------------------------+
+
+| - originalWord : string                           |
+| - scrambled : string                              |
+| - livesLeft : int                                 |
+| - won : bool                                      |
++---------------------------------------------------+
+
+| + WordScramble()
+| + setWord(w : string) : void                      |
+| + getScrambled() : string {query}                 |
+| + tryGuess(g : string) : bool                     |
+| + getLivesLeft() : int {query}                    |
+| + reveal() : void {query}                         |
+| - scramble() : void                               |
++---------------------------------------------------+
+
+
+
++---------------------------------------------------+
+
+|                   ArcadeManager                   |
++---------------------------------------------------+
+
+| - playerName : string                             |
+| - totalTokens : int                               |
+| - lastGame : string                               |
+| _+ totalSessions : int_                           |
++---------------------------------------------------+
+
+| + ArcadeManager()
+| + setPlayer(name : string, tokens : int) : void
+| + launchMenu() : void
+| + printStats() : void {query}
+| + awardBonus(b : int) : void
+| _+ printLeaderboard() : void_
++---------------------------------------------------+
+
+|                   NestedStruct                    |
+|                     Highscore                     |
+| + name : string                                   |
+| + score : int                                     |
++---------------------------------------------------+
+
+
+===============================================
+                Plain Text ADT
+===============================================
+
+Type Name:
+SlotMachine
+
+Domain:
+Collection of data including coins/integers 
+three reel values/strings, and total spins/integers
+
+Operations:
+- SlotMachine():
