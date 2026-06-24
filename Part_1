@@ -75,12 +75,12 @@
 | _+ totalSessions : int_                           |
 +---------------------------------------------------+
 
-| + ArcadeManager()
-| + setPlayer(name : string, tokens : int) : void
-| + launchMenu() : void
-| + printStats() : void {query}
-| + awardBonus(b : int) : void
-| _+ printLeaderboard() : void_
+| + ArcadeManager()                                 |
+| + setPlayer(name : string, tokens : int) : void   |
+| + launchMenu() : void                             |
+| + printStats() : void {query}                     |
+| + awardBonus(b : int) : void                      |
+| _+ printLeaderboard() : void_                     |
 +---------------------------------------------------+
 
 |                   NestedStruct                    |
@@ -98,8 +98,33 @@ Type Name:
 SlotMachine
 
 Domain:
-Collection of data including coins/integers 
-three reel values/strings, and total spins/integers
+Collection of data including coins/integers, three reel values/strings, and total spins/integers
 
 Operations:
-- SlotMachine():
+- SlotMachine(): Makes a new machine instence with zero spisn and coins
+
+- SlotMachine(initialCoins: integers)
+Initializes new machine instence with specific starting balance and no spins
+
+- ~SlotMachine(): Removes instances and prints with a bye message
+
+- setCoins(c: integer)
+Updates the coin amount to a set value
+
+- getCoins() -> integer: Returns the current number of coins avalible
+
+- spin(bet: integer) -> boolean: Deducts bets, randomize reels, increments total spins,
+and returns true if player wins
+
+- resetMachine(): Resets the coins and total spins to zero
+
+
+======================================
+            Why Private 
+======================================
+
+Game variables like coins, secretNumber, and playerName are privated.
+There privated to keep data safe from accidental changes by outside code.
+It forces the program to use public functions line spin or guess, ensuring
+the player data only changes when they play the game. The scramble() function
+is privated because its just an internal helper the main program never needs to call directly.
